@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'bootstrap.html' %}
+    <title>Document</title>
+</head>
+<body>
+    <div class='container'>
+        <br><br><br><br><br><br><br><br>
+    <div class='row'>
+        <div class='col-md-4 col-md-offset-4'>
+    <div class='login-panel panel panel-default'>
+        <div class='panel-heading'>
+            <h1 class='panel-title'>Please login</h1>
+        </div>
+        <div class='panel-body'>
+    <form method='post' action='loggin'>
+        {% csrf_token %}
+        <resultset>
+        <div class='form-group'>
+        Username : <input type='text' name='username' value=''><br><br>
+        </div>
+        <div class='form-group'>
+        Password : &nbsp;<input type='password' name='password' value=''><br><br>
+        </div>
+        <div class='form-group'>
+        <button type='submit' class='btn btn-success btn-lg btn-block'>Login</button>
+        </resultset>
+    </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

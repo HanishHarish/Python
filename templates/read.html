@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'bootstrap.html' %}
+    <style>
+        .header{
+            text-align:center;
+            background-color: skyblue;
+            padding: 3px;
+        }
+        .footer{
+            text-align:justify;
+            background-color: skyblue;
+            padding: 3px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    {% include 'pagelinks.html' %}
+    <h1>
+        {% if request.user.is_superuser %}
+        <a href='insert'>Insert Record</a>
+        {% endif %}       
+    </h1>
+    
+    <table border='1' align='center'>
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Designation</th>
+            {% if request.user.is_superuser %}
+            <th>Action</th>
+            {% endif %}
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td align='center'>{{record.name}}</td>
+            <td align='center'>{{record.mobile}}</td>
+            <td align='center'>{{record.email}}</td>
+            <td align='center'>{{record.address}}</td>
+            <td align='center'>{{record.designation}}</td>
+            {% if request.user.is_superuser %}
+            <td>
+                <a href='edit/{{record.id}}'>Edit</a> | 
+                <a href='delete/{{record.id}}'>Delete</a>
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% include 'footer.html' %}
+</body>
+</html>

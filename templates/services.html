@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'bootstrap.html' %}
+    <style>
+        .header{
+            text-align:center;
+            background-color: skyblue;
+            padding: 3px;
+        }
+        .footer{
+            text-align:justify;
+            background-color: skyblue;
+            padding: 3px;
+        }
+    </style>
+    <title>{{title}}</title>
+</head>
+<body bgcolor="yellow">
+    {% include 'pagelinks.html' %}
+    <h1>List of Services</h1>
+    <table border='1' align='center' width='50%'>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {% for i,j in tbldata.items %}
+        <tr>
+            <td align='center'>{{j.name}}</td>
+            <td align='center'>{{j.email}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% include 'footer.html' %}
+</body>
+</html>

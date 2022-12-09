@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    {% include 'bootstrap.html' %}
+    <style>
+        .header{
+            text-align:center;
+            background-color: skyblue;
+            padding: 3px;
+        }
+        .footer{
+            text-align:justify;
+            background-color: skyblue;
+            padding: 3px;
+        }
+        .body{
+            background-color: tan;
+        }
+    </style>
+    <title>{{title}}</title>
+</head>
+<body bgcolor="{{page_color}}">
+    {% include 'pagelinks.html' %}
+    <h1>{{page}}</h1>
+    <hr><hr>
+    <h2>{{data}}</h2>
+    <p style='font-size:20px'>{{content}}</p>
+    {% load static %}
+
+    <table align = 'center' cellspacing='15px' width=75%> 
+        <tr>   
+            <td align='center'>
+    <div >
+        <img src='{% static 'images/elephant.jpg' %}'>
+    </div><br>
+</td>
+<td align='center'>
+    <div >
+        <img src='{% static 'images/img1.jpg' %}'>
+    </div>
+</td>
+</tr>
+<tr>   
+    <td align='center'>
+<div >
+<img src='{% static 'images/img2.jpg' %}'>
+</div><br>
+</td>
+<td align='center'>
+<div >
+<img src='{% static 'images/img3.jpg' %}'>
+</div>
+</td>
+</tr>
+</table>
+
+    {% include 'footer.html' %}
+</body>
+</html>

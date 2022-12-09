@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'bootstrap.html' %}
+    <style>
+        .header{
+            text-align:center;
+            background-color: skyblue;
+            padding: 3px;
+        }
+        .footer{
+            text-align:justify;
+            background-color: skyblue;
+            padding: 3px;
+        }
+    </style>
+    <title>{{title}}</title>
+</head>
+<body bgcolor="{{page_color}}">
+    {% include 'pagelinks.html' %}
+    {{page_data}}
+    <video width="640" height="480" src="https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4" controls> Sorry, your browser doesn't support HTML5 <code>video</code>, but you can download this video from the <a href="https://archive.org/details/Popeye_forPresident" target="_blank">Internet Archive</a>. </video>      
+    {% include 'footer.html' %}
+</body>
+</html>
